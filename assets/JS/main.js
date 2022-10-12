@@ -1,22 +1,26 @@
 // inseriamo tutte le immagini dinamicamente servendoci dell'array fornito e un semplice ciclo for che concatena un template literal.
-const slideArray = [
-    '<img src="./assets/img/05.webp" alt="">',
-    '<img src="./assets/img/04.webp" alt="">',
-    '<img src="./assets/img/03.webp" alt="">',
-    '<img src="./assets/img/02.webp" alt="">',
-    '<img src="./assets/img/01.webp" alt="">'
-]
+const images = [
+    'img/01.jpg',
+    'img/02.jpg',
+    'img/03.jpg',
+    'img/04.jpg',
+    'img/05.jpg'
+];
 // console.log(slideArray);
-let activeSlide;
-for (let i = 0; i < slideArray.length; i++) {
-    const slideEL = slideArray[i];
-    document.querySelector('.container').insertAdjacentHTML('afterbegin', slideEL)
-    //document.querySelector('.carousel > img').style.display = "none";
+
+for (let i = 0; i < images.length; i++) {
+    const slideEl = images[i];
+    const activeSlide = ` <img src="./assets/${slideEl}" alt="">`
+    console.log(activeSlide);
+    document.querySelector('.container').insertAdjacentHTML('beforeend', activeSlide)
+    // document.querySelector('.container').insertAdjacentHTML('afterbegin', slideEL)
+    // document.querySelector('.carousel > img').style.display = "none";
     // document.querySelector('.carousel > img').style.display = "inline-block";
-    activeSlide = slideEL
+
 }
-console.log(activeSlide);
-document.querySelector('.carousel > img').classList.add("active");
+
+
+// document.querySelector('.carousel > img').classList.add("active");
 
 // .classList.add("active");
 // document.querySelector('.container').insertAdjacentHTML('afterbegin', slideArray)
