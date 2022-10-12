@@ -11,8 +11,10 @@ img {
 }
 
 .container {
-    max-width: 1000px;
+    width: 80%;
     margin: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .container.carousel {
@@ -24,6 +26,9 @@ img {
     display: none;
 }
 
+button {
+    font-size: 3rem;
+}
 
 .carousel>img:not(img.active_slide) {
     display: none;
