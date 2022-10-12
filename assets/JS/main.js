@@ -7,16 +7,23 @@ const images = [
     'img/05.jpg'
 ];
 // console.log(slideArray);
-
+let activeImage = 0;
 for (let i = 0; i < images.length; i++) {
     const slideEl = images[i];
-    const activeSlide = ` <img src="./assets/${slideEl}" alt="">`
+
+    // if (i === slideEl) {
+    //     class_value = "active_slide"
+    // } else {
+    //     class_value = ""
+    // }
+    const activeSlide = ` <img class="${i === activeImage ? 'active_slide' : ''}" src="./assets/${slideEl}" alt="">`
     console.log(activeSlide);
+
+    document.querySelector('.container').insertAdjacentHTML('beforeend', activeSlide);
     // document.querySelector(".container>img").style.display = "none";
     // document.querySelector('.container').insertAdjacentHTML('afterbegin', slideEL)
-    // document.querySelector('.carousel > img').style.display = "none";
     // document.querySelector('.carousel > img').style.display = "inline-block";
-    document.querySelector('.container').insertAdjacentHTML('beforeend', activeSlide)
+
 }
 
 // se la condizione active slide= slideEl è vera allora abbino class active

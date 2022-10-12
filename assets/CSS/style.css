@@ -4,7 +4,6 @@ body {
 
 img {
     max-width: 100%;
-
 }
 
 .carousel img {
@@ -21,6 +20,11 @@ img {
     justify-content: center;
 }
 
-.active_slide {
-    display: inline-block;
+.d_none {
+    display: none;
+}
+
+
+.carousel>img:not(img.active_slide) {
+    display: none;
 }
